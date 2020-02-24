@@ -1,0 +1,42 @@
+/* pages/home/home.wxss */
+.cv{
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 50rpx;
+    width: 100%;
+
+}
+.cv cover-image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.btn_reChoose{
+    position: absolute;
+    bottom:50rpx;
+    left: 50%;
+    transform: translateX(-50%)
+}
+.face_info{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: red;
+    width: 80%;
+    height: 400rpx;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5rpx;
+    box-shadow: 2rpx 2rpx 10rpx white;
+    font-size: 40rpx;
+    /* 纵向分散对齐 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.face_info_row{
+  /* 横向分散对齐 */
+  display: flex;
+  justify-content: space-around;
+}

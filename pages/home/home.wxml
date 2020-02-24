@@ -1,0 +1,34 @@
+<!-- camera.wxml -->
+<camera device-position="{{dev_position}}" flash="off" binderror="error" style="width: 100%; height: {{sHeight}}px;" wx:if="{{src==''}}">
+  <cover-view class="cv">
+    <cover-image src="/images/icons/切换摄像头.png" bindtap="reverse"></cover-image>
+    <cover-image src="/images/icons/拍照.png" bindtap="takePhoto"></cover-image>
+    <cover-image src="/images/icons/相册.png" bindtap="choosePhoto"></cover-image>
+  </cover-view>
+</camera>
+<view wx:else>
+  <image mode="aspectFit" src="{{src}}" style="width: 100%; height: {{sHeight}}px;display:block "></image>
+  <button type="warn" class="btn_reChoose" bindtap="reChoose">重选照片</button>
+  
+  <view class="face_info" wx:if="{{faceInfo.age!=undefined}}">
+    <view class="face_info_row">
+      <text class="">年龄:{{faceInfo.age}}岁</text>
+      <text class="">性别:{{mapInfo.gender[faceInfo.gender.type]}}</text>
+    </view>
+    <view class="face_info_row">
+      <text class="">颜值:{{faceInfo.beauty}}分</text>
+      <text class="">表情:{{mapInfo.expression[faceInfo.expression.type]}}</text>
+    </view>
+    <view class="face_info_row">
+      <text class="">眼镜:{{mapInfo.glasses[faceInfo.glasses.type]}}</text>
+      <text class="">情绪:{{mapInfo.emotion[faceInfo.emotion.type]}}</text>
+    </view>
+    <view class="face_info_row">
+      <text class="">脸型:{{mapInfo.face_shape[faceInfo.face_shape.type]}}</text>
+      <text class="">脸:{{mapInfo.face_type[faceInfo.face_type.type]}}</text>
+    </view>
+  </view>
+  <view class="face_info" wx:else>
+  <view class="face_info_row">未检测到人脸~~~</view>
+  </view>
+</view>
